@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            overflow-x: hidden;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        h1, h2, p {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Hero Section with 3D Parallax */
+        .hero {
+            height: 100vh;
+            background: url('hero-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            transform-style: preserve-3d;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .hero h1 {
+            font-size: 6em;
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+            color: #FF4081;
+            transform: rotateY(0deg);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 2em;
+            margin-top: 20px;
+            opacity: 0.8;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .scroll-icon {
+            margin-top: 40px;
+            font-size: 2.5em;
+            cursor: pointer;
+            animation: fadeIn 4s ease-in-out;
+            opacity: 0.8;
+        }
+
+        /* About Section with Storytelling */
+        #about {
+            padding: 100px 50px;
+            background: #333;
+            text-align: center;
+            font-size: 1.5em;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        #about h2 {
+            font-size: 4em;
+            color: #FF4081;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            color: #ccc;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+            font-size: 1.3em;
+            opacity: 0;
+            animation: fadeInUp 2s ease-in-out forwards;
+        }
+
+        /* Projects Section with 3D Hover Effects */
+        #projects {
+            padding: 100px 50px;
+            background: #222;
+            display: flex;
+            justify-content: space-around;
+            animation: fadeIn 4s ease-in-out;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            background: #444;
+            width: 320px;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 152, 0, 0.4);
+            margin: 15px;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-20px) rotateY(5deg);
+            box-shadow: 0 0 40px rgba(255, 152, 0, 0.7);
+        }
+
+        .project-card h3 {
+            font-size: 2em;
+            color: #FF4081;
+        }
+
+        .project-card p {
+            font-size: 1.2em;
+            color: #ddd;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            font-size: 1.5em;
+            color: #FF4081;
+            margin-top: 15px;
+            display: inline-block;
+            opacity: 0;
+            animation: fadeInUp 2s ease-in-out forwards;
+        }
+
+        .project-card small {
+            font-size: 1em;
+            color: #aaa;
+            margin-top: 10px;
+            display: block;
+            opacity: 0;
+            animation: fadeInUp 3s ease-in-out forwards;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #111;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 3.5em;
+            color: #FF4081;
+            margin-bottom: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 80%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #FF4081;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .contact-form button {
+            padding: 15px 30px;
+            background-color: #FF4081;
+            color: #111;
+            border: none;
+            font-size: 1.5em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #f50057;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>My Journey</h1>
+        <p>Discover how I went from dreaming to creating the impossible.</p>
+        <div class="scroll-icon">↓</div>
+    </section>
+
+    <!-- About Me Section with Story -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            The story begins with curiosity—the spark of innovation. Growing up, I wondered how the world worked behind the scenes of every app and website I used. But rather than just ask questions, I sought the answers. I embarked on a journey to learn coding, design, and technology. From creating simple scripts to developing interactive apps, I’ve transformed my passion into a mission: To craft solutions that change lives, one line of code at a time.
+        </p>
+    </section>
+
+    <!-- Projects Section with 5 Projects -->
+    <section id="projects">
+        <div class="project-card">
+            <h3>Interactive CyberScan</h3>
+            <p>A dynamic, fully responsive url malware detector created using lovable.</p>
+            <small>This link will lead you to my listing of this project</small>
+            <a href="https://x.com/destiny_duels/status/1906084146281423075" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+            <h3>Celestial Wonders</h3>
+            <p>Talks about our space, galaxy and what's beyond created using html,javascript and css</p>
+            <small>This link will lead you to my listing of this project</small>
+            <a href="https://x.com/destiny_duels/status/1899489719370776714" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+            <h3>Subsription tracker</h3>
+            <p>A Subscription tracker to reminder you, your subscriptions due. Created using flutter</p>
+            <small>This link will lead you to my listing of this project</small>
+            <a href="https://x.com/destiny_duels/status/1895806362371965308" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+            <h3>BasketBall Manufacturer company website </h3>
+            <p>A website created for a BasketBall Manufacturer to sell their products</p>
+            <small>This link will lead you to my listing of this project</small>
+            <a href="https://x.com/destiny_duels/status/1895055807617933517" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+            <h3>Jujutsu Kaisen Website</h3>
+            <p>A fan-made tribute to my favorite show Jujutsu Kaisen</p>
+            <small>This link will lead you to my listing of this project</small>
+            <a href="https://x.com/destiny_duels/status/1890302939433959886" target="_blank">View Project</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        // Scroll-triggered animations
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.scroll-trigger').forEach(block => {
+                let blockPosition = block.getBoundingClientRect().top;
+                let windowHeight = window.innerHeight;
+                if (blockPosition < windowHeight * 0.8) {
+                    block.classList.add('visible');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
